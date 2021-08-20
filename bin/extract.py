@@ -114,6 +114,13 @@ def write_img_to_file(image, base_filename, outdir, scale=1):
         print(f"file size: {actual_size},  ({human_size(actual_size)}")
         print()
 
+def find_first_image(fits):
+    print("hdus: " + str(len(fits)))
+    hdu = next((hdu for hdu in fits.hdu_list if hdu.has_data()), False)
+    if not hdu:
+        sys.exit('no hdu with image data found');
+    return fits[ hdu.get_extnum()].read()
+
 
 def extract_raw_image_data(infile, outdir, logscaling):
     original_filename = os.path.split(infile)[1]
@@ -133,9 +140,11 @@ def extract_raw_image_data(infile, outdir, logscaling):
 
     fits = fitsio.FITS(infile)
 
-    print("hdus: " + str(len(fits)))
+    img = find_first_image(fits)
 
-    img = fits[0].read()
+    dtype = str(img.dtype)
+    print("img datatype: " + dtype)
+
     img_flat = img.flatten()
 
     print()
@@ -363,7 +372,13 @@ index = 0
 for entry in os.scandir(indir):
     if (entry.path.endswith(".fits") or entry.path.endswith(".FITS")):
         # print(entry.path)
+        print(f"\n\n---------------- scanning ----------------\n")
+        print(f"index: {index}")
+        print(f"entry.path: {entry.path}")
+        print(f"\n\n")
+
         logscaling = logscalestr[index] != "0"
+
         extract_raw_image_data(entry.path, outdir, logscaling)
         index += 1
 
