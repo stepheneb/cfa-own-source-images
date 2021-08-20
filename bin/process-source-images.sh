@@ -1,14 +1,13 @@
 #!/bin/sh
 
-./bin/extract.py source-images/fits/jupiter-animate 0000000000000000
+./bin/extract.py source-images/fits/jupiter-animate 000000000000000
 ./bin/extract.py source-images/fits/HST_Lagoon 000
 ./bin/extract.py source-images/fits/m51 000
 ./bin/extract.py source-images/fits/m51-multi 111
 ./bin/extract.py source-images/fits/M82 000
-./bin/extract.py source-images/fits/
-./bin/extract.py source-images/fits/
 
-./bin/extract-jpg.py source-images/jpg/potw1345/
+
+./bin/extract-jpg.py source-images/jpg/potw1345a/
 ./bin/extract-jpg.py source-images/jpg/opo9914d/
 ./bin/extract-jpg.py source-images/jpg/heic2007a
 ./bin/extract-jpg.py source-images/jpg/WAC_GL000/
