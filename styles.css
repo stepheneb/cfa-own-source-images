@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* color variables */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+:root {
+  /* colors */
+  --almost-black: #080808;
+  --almost-white: #e8e8e8;
+  --green: #a4d292;
+  --bright-green: #bff5aa;
+  --brighter-green: #cfffbb;
+  --bright-teal: #3ddaf6;
+  --dark-teal: #2b88ac;
+  --bright-blue: #032741;
+  --bright-pink: #f33c85;
+  /* font sizes */
+  --content-font-size: 1.2em;
+  --header-font-size: 1.4em;
+  --results-font-size: 0.8em;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  background-color: var(--almost-black);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.content {
+  font-size: var(--content-font-size);
+  color: white;
+  margin-top: 30vh;
+}
