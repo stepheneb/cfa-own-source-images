@@ -5,6 +5,7 @@
 ./bin/extract.py source-images/fits/m51 000
 ./bin/extract.py source-images/fits/m51-multi 111
 ./bin/extract.py source-images/fits/M82 111
+./bin/extract.py source-images/fits/lagoon-multi 111
 
 
 ./bin/extract-jpg.py source-images/jpg/potw1345a/
